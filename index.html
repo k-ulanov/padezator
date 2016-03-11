@@ -9,8 +9,8 @@
         
             function fromURL()
             {
-                var url = document.URL.split("#");
-                inp.value = decodeURI(url[1]);
+                var url = decodeURIComponent(document.URL).split("#");
+                inp.value = url[1];
             }
         </script>
     </head>
