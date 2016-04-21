@@ -1,20 +1,73 @@
 <html>
-    <head>
-        <script>
+<head>
+<script>
+function go1()
+{
+    var slovo = in1.value
+    okon=slovo.charAt(slovo.length-1);
+    console.log(okon);
 
-            function toURL(a)
-            {
-                window.location ="#"+a;
-            }
-        
-            function fromURL()
-            {
-                var url = decodeURIComponent(document.URL).split("#");
-                inp.value = url[1];
-            }
-        </script>
-    </head>
-    <body onload="fromURL()">
-        <input id="inp" onkeyup="toURL(this.value)">
-    </body>
+    switch(okon)
+    {
+    case "а":
+        osnova = slovo.slice(0,-1); 
+        out1.innerHTML="И: "+osnova+okon+"<br>"; 
+        out1.innerHTML+="Р: "+osnova+"и<br>"; 
+        out1.innerHTML+="Д: "+osnova+"е<br>";
+        out1.innerHTML+="В: "+osnova+"у<br>"; 
+        out1.innerHTML+="Т: "+osnova+"ой<br>"; 
+        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+
+    case "я": 
+        osnova = slovo.slice(0,-1); 
+        out1.innerHTML="И: "+osnova+okon+"<br>"; 
+        out1.innerHTML+="Р: "+osnova+"и<br>"; 
+        out1.innerHTML+="Д: "+osnova+"е<br>";
+        out1.innerHTML+="В: "+osnova+"ю<br>"; 
+        out1.innerHTML+="Т: "+osnova+"ёй<br>"; 
+        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+
+    case "ь": 
+        osnova = slovo.slice(0,-1); 
+        out1.innerHTML="И: "+osnova+okon+"<br>"; 
+        out1.innerHTML+="Р: "+osnova+"и<br>"; 
+        out1.innerHTML+="Д: "+osnova+"и<br>";
+        out1.innerHTML+="В: "+osnova+"ь<br>"; 
+        out1.innerHTML+="Т: "+osnova+"ью<br>"; 
+        out1.innerHTML+="П: о "+osnova+"и<br>"; break;
+
+    case "о":
+        osnova = slovo.slice(0,-1); 
+        out1.innerHTML="И: "+osnova+okon+"<br>"; 
+        out1.innerHTML+="Р: "+osnova+"а<br>"; 
+        out1.innerHTML+="Д: "+osnova+"у<br>";
+        out1.innerHTML+="В: "+osnova+"о<br>"; 
+        out1.innerHTML+="Т: "+osnova+"ом<br>"; 
+        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+
+    case "е":
+        osnova = slovo.slice(0,-1); 
+        out1.innerHTML="И: "+osnova+okon+"<br>"; 
+        out1.innerHTML+="Р: "+osnova+"я<br>"; 
+        out1.innerHTML+="Д: "+osnova+"ю<br>";
+        out1.innerHTML+="В: "+osnova+"е<br>"; 
+        out1.innerHTML+="Т: "+osnova+"ем<br>"; 
+        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+
+    default: 
+        osnova = slovo; 
+        out1.innerHTML="И: "+osnova+"<br>"; 
+        out1.innerHTML+="Р: "+osnova+"а<br>"; 
+        out1.innerHTML+="Д: "+osnova+"у<br>";
+        out1.innerHTML+="В: "+osnova+"<br>"; 
+        out1.innerHTML+="Т: "+osnova+"ом<br>"; 
+        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+
+    }
+}
+</script>
+<body>
+<input size=20 id=in1><input type="button" value="go" onclick="go1()"><br>
+<p id=out1></p>
+</body>
 </html>
