@@ -18,14 +18,28 @@ function go1()
         out1.innerHTML+="Т: "+osnova+"ой<br>"; 
         out1.innerHTML+="П: о "+osnova+"е<br>"; break;
 
-    case "я": 
+    case "я":
+        if(slovo.charAt(slovo.length-2) == "и")
+        {
+            console.log("армия");
+            out1.innerHTML="И: "+osnova+"я<br>";
+            out1.innerHTML+="Р: "+osnova+"и<br>";
+            out1.innerHTML+="Д: "+osnova+"и<br>";
+            out1.innerHTML+="В: "+osnova+"ю<br>";
+            out1.innerHTML+="Т: "+osnova+"ей<br>";
+            out1.innerHTML+="П: о "+osnova+"и<br>";
+        }
+        else
+        {
         osnova = slovo.slice(0,-1); 
         out1.innerHTML="И: "+osnova+okon+"<br>"; 
         out1.innerHTML+="Р: "+osnova+"и<br>"; 
         out1.innerHTML+="Д: "+osnova+"е<br>";
         out1.innerHTML+="В: "+osnova+"ю<br>"; 
         out1.innerHTML+="Т: "+osnova+"ёй<br>"; 
-        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+        out1.innerHTML+="П: о "+osnova+"е<br>";
+        }
+        break;
 
     case "ь": 
         osnova = slovo.slice(0,-1); 
