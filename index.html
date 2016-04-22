@@ -5,7 +5,7 @@ function go1()
 {
     var slovo = in1.value
     okon=slovo.charAt(slovo.length-1);
-    console.log(okon);
+    //console.log(okon);
 
     switch(okon)
     {
@@ -35,6 +35,15 @@ function go1()
         out1.innerHTML+="В: "+osnova+"ь<br>"; 
         out1.innerHTML+="Т: "+osnova+"ью<br>"; 
         out1.innerHTML+="П: о "+osnova+"и<br>"; break;
+        
+    case "й":
+        osnova = slovo.slice(0,-1);
+        out1.innerHTML="И: "+osnova+"й <br>";
+        out1.innerHTML+="Р: "+osnova+"я<br>";
+        out1.innerHTML+="Д: "+osnova+"ю<br>";
+        out1.innerHTML+="В: "+osnova+"й<br>";
+        out1.innerHTML+="Т: "+osnova+"ем<br>";
+        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
 
     case "о":
         osnova = slovo.slice(0,-1); 
@@ -67,7 +76,7 @@ function go1()
 }
 </script>
 <body>
-<input size=20 id=in1><input type="button" value="go" onclick="go1()"><br>
+    <input size=20 id=in1 onkeypress="if(event.keyCode == 13)go1();"><input type="button" value="go" onclick="go1()"><br>
 <p id=out1></p>
 </body>
 </html>
