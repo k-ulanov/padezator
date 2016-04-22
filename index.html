@@ -10,9 +10,12 @@ function go1()
     switch(okon)
     {
     case "а":
-        osnova = slovo.slice(0,-1); 
-        out1.innerHTML="И: "+osnova+okon+"<br>"; 
-        out1.innerHTML+="Р: "+osnova+"и<br>"; 
+
+        osnova = slovo.slice(0,-1);
+        out1.innerHTML="И: "+osnova+okon+"<br>";
+        a = slovo.charAt(slovo.length-2);
+        if(a == "г" || a == "ж" || a == "к" || a == "х" || a == "ч" || a == "ш" || a == "щ") out1.innerHTML+="Р: "+osnova+"и<br>";
+        else out1.innerHTML+="Р: "+osnova+"ы<br>";
         out1.innerHTML+="Д: "+osnova+"е<br>";
         out1.innerHTML+="В: "+osnova+"у<br>"; 
         out1.innerHTML+="Т: "+osnova+"ой<br>"; 
