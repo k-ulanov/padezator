@@ -21,7 +21,7 @@ function go1()
     case "я":
         if(slovo.charAt(slovo.length-2) == "и")
         {
-            console.log("армия");
+            osnova = slovo.slice(0,-1);
             out1.innerHTML="И: "+osnova+"я<br>";
             out1.innerHTML+="Р: "+osnova+"и<br>";
             out1.innerHTML+="Д: "+osnova+"и<br>";
