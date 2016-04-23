@@ -1,99 +1,244 @@
 <html>
 <head>
+<meta charset="UTF-8">
+<style>
+html, input,table,tr,td
+{
+    font: 36px/50px sans-serif;
+}
+html, body
+{
+margin: 0px;
+}
+
+.but
+{
+    display: inline-table;
+    margin-left:3px; 
+    padding: 0px 3px 8px 10px;
+    border: 0px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0);   
+}
+
+.but:hover
+{
+    background: linear-gradient(to top, #2484c6, #24c3c6);
+    color: white;
+}
+.but:active
+{
+    position: relative;
+    top: 1px;
+}
+#in1
+{
+    padding: 0px 20px 8px;
+    border: 0px;
+    border-radius: 3px;
+    background: linear-gradient(to top, #2484c6, #24c3c6);
+    color: white;
+}
+
+.small
+{
+    padding-top: 8px;
+    font-size: 12px;
+}
+
+.inline
+{
+    display: inline-block;
+    vertical-align: top;
+}
+#out1
+{
+    position: absolute;
+}
+#out2
+{
+    padding-left: 20px;
+}
+.mid
+{
+    display: table;
+    margin:30px auto;
+}
+.logo
+{
+    color: #24c3c6;
+    font: 12px/24px sans-serif;
+    letter-spacing: 5;
+}
+.out
+{
+margin-top: 20px;
+}
+</style>
 <script>
 function go1()
 {
-    var slovo = in1.value
+
+    var slovo = in1.value;
+    window.location = "#"+slovo;
     okon=slovo.charAt(slovo.length-1);
     //console.log(okon);
 
+    osnova = slovo.slice(0,-1);  
     switch(okon)
     {
     case "а":
-
-        osnova = slovo.slice(0,-1);
-        out1.innerHTML="И: "+osnova+okon+"<br>";
         a = slovo.charAt(slovo.length-2);
-        if(a == "г" || a == "ж" || a == "к" || a == "х" || a == "ч" || a == "ш" || a == "щ") out1.innerHTML+="Р: "+osnova+"и<br>";
-        else out1.innerHTML+="Р: "+osnova+"ы<br>";
-        out1.innerHTML+="Д: "+osnova+"е<br>";
-        out1.innerHTML+="В: "+osnova+"у<br>"; 
-        out1.innerHTML+="Т: "+osnova+"ой<br>"; 
-        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+        out1.innerHTML="И<br>";
+        out2.innerHTML=slovo+"<br>";
+        if(a == "г" || a == "ж" || a == "к" || a == "х" || a == "ч" || a == "ш" || a == "щ") 
+        {
+            out1.innerHTML+="Р<br>";
+            out2.innerHTML+=osnova+"и<br>";
+        }
+        else
+        {
+            out1.innerHTML+="Р<br>";
+            out2.innerHTML+=osnova+"ы<br>";
+        }
+        out1.innerHTML+="Д<br>";
+        out2.innerHTML+=osnova+"е<br>";
+        out1.innerHTML+="В<br>";
+        out2.innerHTML+=osnova+"у<br>"; 
+        out1.innerHTML+="Т<br>";
+        out2.innerHTML+=osnova+"ой<br>"; 
+        out1.innerHTML+="П<br>";
+        out2.innerHTML+="о "+osnova+"е<br>"; break;
 
     case "я":
         if(slovo.charAt(slovo.length-2) == "и")
         {
-            osnova = slovo.slice(0,-1);
-            out1.innerHTML="И: "+osnova+"я<br>";
-            out1.innerHTML+="Р: "+osnova+"и<br>";
-            out1.innerHTML+="Д: "+osnova+"и<br>";
-            out1.innerHTML+="В: "+osnova+"ю<br>";
-            out1.innerHTML+="Т: "+osnova+"ей<br>";
-            out1.innerHTML+="П: о "+osnova+"и<br>";
+            out1.innerHTML="И<br>";
+            out2.innerHTML=slovo+"<br>";
+            out1.innerHTML+="Р<br>";
+            out2.innerHTML+=osnova+"и<br>";
+            out1.innerHTML+="Д<br>";
+            out2.innerHTML+=osnova+"и<br>";
+            out1.innerHTML+="В<br>";
+            out2.innerHTML+=osnova+"ю<br>";
+            out1.innerHTML+="Т<br>";
+            out2.innerHTML+=osnova+"ей<br>";
+            out1.innerHTML+="П<br>";
+            out2.innerHTML+="о "+osnova+"и<br>";
         }
         else
         {
-        osnova = slovo.slice(0,-1); 
-        out1.innerHTML="И: "+osnova+okon+"<br>"; 
-        out1.innerHTML+="Р: "+osnova+"и<br>"; 
-        out1.innerHTML+="Д: "+osnova+"е<br>";
-        out1.innerHTML+="В: "+osnova+"ю<br>"; 
-        out1.innerHTML+="Т: "+osnova+"ёй<br>"; 
-        out1.innerHTML+="П: о "+osnova+"е<br>";
+        out1.innerHTML="И<br>";
+        out2.innerHTML=slovo+"<br>";
+        out1.innerHTML+="Р<br>";
+        out2.innerHTML+=osnova+"и<br>"; 
+        out1.innerHTML+="Д<br>";
+        out2.innerHTML+=osnova+"е<br>";
+        out1.innerHTML+="В<br>";
+        out2.innerHTML+=osnova+"ю<br>"; 
+        out1.innerHTML+="Т<br>";
+        out2.innerHTML+=osnova+"ей<br>"; 
+        out1.innerHTML+="П<br>";
+        out2.innerHTML+="о "+osnova+"е<br>";
         }
         break;
 
-    case "ь": 
-        osnova = slovo.slice(0,-1); 
-        out1.innerHTML="И: "+osnova+okon+"<br>"; 
-        out1.innerHTML+="Р: "+osnova+"и<br>"; 
-        out1.innerHTML+="Д: "+osnova+"и<br>";
-        out1.innerHTML+="В: "+osnova+"ь<br>"; 
-        out1.innerHTML+="Т: "+osnova+"ью<br>"; 
-        out1.innerHTML+="П: о "+osnova+"и<br>"; break;
+    case "ь":
+        out1.innerHTML="И<br>";
+        out2.innerHTML=slovo+"<br>"; 
+        out1.innerHTML+="Р<br>";
+        out2.innerHTML+=osnova+"и<br>"; 
+        out1.innerHTML+="Д<br>";
+        out2.innerHTML+=osnova+"и<br>";
+        out1.innerHTML+="В<br>";
+        out2.innerHTML+=osnova+"ь<br>"; 
+        out1.innerHTML+="Т<br>";
+        out2.innerHTML+=osnova+"ью<br>"; 
+        out1.innerHTML+="П<br>";
+        out2.innerHTML+="о "+osnova+"и<br>"; break;
         
     case "й":
-        osnova = slovo.slice(0,-1);
-        out1.innerHTML="И: "+osnova+"й <br>";
-        out1.innerHTML+="Р: "+osnova+"я<br>";
-        out1.innerHTML+="Д: "+osnova+"ю<br>";
-        out1.innerHTML+="В: "+osnova+"й<br>";
-        out1.innerHTML+="Т: "+osnova+"ем<br>";
-        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+        out1.innerHTML="И<br>";
+        out2.innerHTML=slovo+"<br>"; 
+        out1.innerHTML+="Р<br>";
+        out2.innerHTML+=osnova+"я<br>";
+        out1.innerHTML+="Д<br>";
+        out2.innerHTML+=osnova+"ю<br>";
+        out1.innerHTML+="В<br>";
+        out2.innerHTML+=osnova+"й<br>";
+        out1.innerHTML+="Т<br>";
+        out2.innerHTML+=osnova+"ем<br>";
+        out1.innerHTML+="П<br>";
+        out2.innerHTML+="о "+osnova+"е<br>"; break;
 
-    case "о":
-        osnova = slovo.slice(0,-1); 
-        out1.innerHTML="И: "+osnova+okon+"<br>"; 
-        out1.innerHTML+="Р: "+osnova+"а<br>"; 
-        out1.innerHTML+="Д: "+osnova+"у<br>";
-        out1.innerHTML+="В: "+osnova+"о<br>"; 
-        out1.innerHTML+="Т: "+osnova+"ом<br>"; 
-        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+    case "о": 
+        out1.innerHTML="И<br>";
+        out2.innerHTML=slovo+"<br>"; 
+        out1.innerHTML+="Р<br>";
+        out2.innerHTML+=osnova+"а<br>"; 
+        out1.innerHTML+="Д<br>";
+        out2.innerHTML+=osnova+"у<br>";
+        out1.innerHTML+="В<br>";
+        out2.innerHTML+=osnova+"о<br>"; 
+        out1.innerHTML+="Т<br>";
+        out2.innerHTML+=osnova+"ом<br>"; 
+        out1.innerHTML+="П<br>";
+        out2.innerHTML+="о "+osnova+"е<br>"; break;
 
     case "е":
-        osnova = slovo.slice(0,-1); 
-        out1.innerHTML="И: "+osnova+okon+"<br>"; 
-        out1.innerHTML+="Р: "+osnova+"я<br>"; 
-        out1.innerHTML+="Д: "+osnova+"ю<br>";
-        out1.innerHTML+="В: "+osnova+"е<br>"; 
-        out1.innerHTML+="Т: "+osnova+"ем<br>"; 
-        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+        out1.innerHTML="И<br>";
+        out2.innerHTML=slovo+"<br>"; 
+        out1.innerHTML+="Р<br>";
+        out2.innerHTML+=osnova+"я<br>"; 
+        out1.innerHTML+="Д<br>";
+        out2.innerHTML+=osnova+"ю<br>";
+        out1.innerHTML+="В<br>";
+        out2.innerHTML+=osnova+"е<br>"; 
+        out1.innerHTML+="Т<br>";
+        out2.innerHTML+=osnova+"ем<br>"; 
+        out1.innerHTML+="П<br>";
+        out2.innerHTML+="о "+osnova+"е<br>"; break;
 
     default: 
-        osnova = slovo; 
-        out1.innerHTML="И: "+osnova+"<br>"; 
-        out1.innerHTML+="Р: "+osnova+"а<br>"; 
-        out1.innerHTML+="Д: "+osnova+"у<br>";
-        out1.innerHTML+="В: "+osnova+"<br>"; 
-        out1.innerHTML+="Т: "+osnova+"ом<br>"; 
-        out1.innerHTML+="П: о "+osnova+"е<br>"; break;
+        osnova = slovo;  
+        out1.innerHTML="И<br>";
+        out2.innerHTML=slovo+"<br>"; 
+        out1.innerHTML+="Р<br>";
+        out2.innerHTML+=osnova+"а<br>"; 
+        out1.innerHTML+="Д<br>";
+        out2.innerHTML+=osnova+"у<br>";
+        out1.innerHTML+="В<br>";
+        out2.innerHTML+=osnova+"<br>"; 
+        out1.innerHTML+="Т<br>";
+        out2.innerHTML+=osnova+"ом<br>"; 
+        out1.innerHTML+="П<br>";
+        out2.innerHTML+="о "+osnova+"е<br>"; break;
 
     }
 }
+
+function readurl()
+{
+    var url = decodeURIComponent(document.URL).split("#");
+    
+    if(url.length > 1)
+    {
+        in1.value = url[1];
+        go1();
+    }
+}
 </script>
-<body>
-    <input size=20 id=in1 onkeypress="if(event.keyCode == 13)go1();"><input type="button" value="↵" onclick="go1()"><br>
-<p id=out1></p>
+<body onload="readurl()">
+<div class=mid>
+<div class=logo>
+ПАДЕЖАТОР
+</div>
+<input size=24 id="in1" onkeypress="if(event.keyCode == 13)go1();" autofocus autocomplete="off"><div class="but" onclick="go1()">↵</div>
+<div class=out>
+<div class="small inline" id="out1">
+</div><div class="inline" id="out2"></div>
+</div>
+</div>
+</table>
 </body>
 </html>
