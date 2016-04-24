@@ -5,7 +5,7 @@
 html
 {
     margin: 0px;
-    font: 1.8em/1.5 sans-serif;
+    font: 1.8em/1.5 "verdana", sans-serif;
 }
 
 body
@@ -27,15 +27,12 @@ white-space: nowrap;
     height: 1.8em;
     vertical-align: baseline;
     display: inline-block;
-   // box-sizing: border-box;
     padding-bottom: 0.2em; 
 }
 
 #in1
 {
     width: calc(100% - 4px - 1em);
-    //max-width: 17em;
-    //padding-left: 1rem;
     text-indent: 1rem;
     border: 0px;
     border-radius: 3px;
@@ -59,31 +56,32 @@ white-space: nowrap;
     background: linear-gradient(to top, #2484c6, #24c3c6);
     color: white;
 }
+
 .but:active
 {
     position: relative;
     top: 1px;
 }
+
 .inline
 {
     display: inline-block;
     vertical-align: baseline;
 }
+
 #out1
 {
     width: 1rem;
     font-size: 0.5em;
     line-height: 3;
 }
-#out2
-{
-    //font: 1.3em/1.5em sans-serif;
-    //padding-left: 20px;
-}
+
 .mid
 {
     display: table;
     margin:30px auto;
+    width: 100%;
+    max-width: 20em;
 }
 .logo
 {
@@ -104,7 +102,6 @@ function go1()
     var slovo = in1.value;
     window.location = "#"+slovo;
     okon=slovo.charAt(slovo.length-1);
-    //console.log(okon);
 
     osnova = slovo.slice(0,-1);  
     switch(okon)
