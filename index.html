@@ -2,20 +2,53 @@
 <head>
 <meta charset="UTF-8">
 <style>
-html, input,table,tr,td
+html
 {
-    font: 36px/50px sans-serif;
+    margin: 0px;
+    font: 1.8em/1.5 sans-serif;
 }
-html, body
+
+body
 {
-margin: 0px;
+margin: 20px;
+}
+div
+{
+    //border: 1px dotted red;
+}
+div.in
+{
+white-space: nowrap;
+}
+
+.but, #in1
+{
+    font-size: 1.4em;
+    height: 1.8em;
+    vertical-align: baseline;
+    display: inline-block;
+   // box-sizing: border-box;
+    padding-bottom: 0.2em; 
+}
+
+#in1
+{
+    width: calc(100% - 4px - 1em);
+    //max-width: 17em;
+    //padding-left: 1rem;
+    text-indent: 1rem;
+    border: 0px;
+    border-radius: 3px;
+    background: linear-gradient(to top, #2484c6, #24c3c6);
+    color: white;
 }
 
 .but
 {
-    display: inline-table;
-    margin-left:3px; 
-    padding: 0px 3px 8px 10px;
+    width: 1em;
+    margin-left:4px; 
+    padding-right: 0.1rem;
+    text-align: right;
     border: 0px;
     border-radius: 3px;
     background: rgba(0,0,0,0);   
@@ -31,33 +64,21 @@ margin: 0px;
     position: relative;
     top: 1px;
 }
-#in1
-{
-    padding: 0px 20px 8px;
-    border: 0px;
-    border-radius: 3px;
-    background: linear-gradient(to top, #2484c6, #24c3c6);
-    color: white;
-}
-
-.small
-{
-    padding-top: 8px;
-    font-size: 12px;
-}
-
 .inline
 {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: baseline;
 }
 #out1
 {
-    position: absolute;
+    width: 1rem;
+    font-size: 0.5em;
+    line-height: 3;
 }
 #out2
 {
-    padding-left: 20px;
+    //font: 1.3em/1.5em sans-serif;
+    //padding-left: 20px;
 }
 .mid
 {
@@ -67,12 +88,13 @@ margin: 0px;
 .logo
 {
     color: #24c3c6;
-    font: 12px/24px sans-serif;
-    letter-spacing: 5;
+    font-size: 0.45em;
+    letter-spacing: 0.4em;
 }
 .out
 {
 margin-top: 20px;
+white-space: nowrap;
 }
 </style>
 <script>
@@ -128,6 +150,7 @@ function go1()
         }
         else
         {
+
         out1.innerHTML="И<br>";
         out2.innerHTML=slovo+"<br>";
         out1.innerHTML+="Р<br>";
@@ -233,7 +256,8 @@ function readurl()
 <div class=logo>
 ПАДЕЖАТОР
 </div>
-<input size=24 id="in1" onkeypress="if(event.keyCode == 13)go1();" autofocus autocomplete="off"><div class="but" onclick="go1()">↵</div>
+<div class=in>
+<input id="in1" onkeypress="if(event.keyCode == 13)go1();" autofocus autocomplete="off"><input type="button" class="but" onclick="go1()" value="↵"></input></div>
 <div class=out>
 <div class="small inline" id="out1">
 </div><div class="inline" id="out2"></div>
